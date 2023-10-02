@@ -4,7 +4,7 @@ const options = {
   method: 'GET',
   url: 'https://tasty.p.rapidapi.com/recipes/list',
   params: {
-    from: '44',
+    from: '0',
     size: '20',
   },
   headers: {
@@ -17,6 +17,7 @@ export const api_call = data => async dispatch => {
   dispatch({type: 'start_loading'});
   try {
     await axios.request(options).then(res => {
+      console.log('successs');
       dispatch({type: 'success', payload: res});
     });
   } catch (error) {

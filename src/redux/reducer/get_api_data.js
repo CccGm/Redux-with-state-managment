@@ -4,6 +4,8 @@ const initialstate = {
   error: null,
 };
 
+console.log(initialstate.data, 'show ');
+
 const get_api_data = (state = initialstate, {type, payload}) => {
   switch (type) {
     case 'start_loading':
