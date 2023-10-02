@@ -1,8 +1,11 @@
+import {useNavigation} from '@react-navigation/native';
 import React from 'react';
-import {Text, View} from 'react-native';
+import {Text, TouchableOpacity, View} from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 export const Header = props => {
   const BACK = props.goback;
+  const navigation = useNavigation();
   return (
     <View
       style={{
@@ -14,21 +17,23 @@ export const Header = props => {
       }}>
       <View style={{flexDirection: 'row'}}>
         {BACK == true ? (
-          <View
+          <TouchableOpacity
             style={{
               alignItems: 'flex-start',
               marginLeft: '5%',
               justifyContent: 'center',
-            }}>
-            <Text style={{fontSize: 12, fontWeight: '500'}}>Go back</Text>
-          </View>
+              paddingHorizontal: 5,
+            }}
+            onPress={() => navigation.goBack()}>
+            <Icon name={'caret-back'} size={22} color={'#5e4dca'} />
+          </TouchableOpacity>
         ) : null}
 
         <View
           style={{
             justifyContent: 'center',
             alignItems: 'center',
-            width: BACK == true ? '70%' : '100%',
+            width: BACK == true ? '75%' : '100%',
             marginHorizontal: BACK == true ? 12 : null,
           }}>
           <Text
