@@ -1,9 +1,9 @@
 import React, {useEffect} from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {List_Show} from '../List_Show';
+import {Home_Screen} from '../Home_Screen';
 import {Item_Details} from '../common/Item_Details';
 import {NavigationContainer} from '@react-navigation/native';
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {api_call} from '../redux/action/api_call';
 
 export const Routs = () => {
@@ -19,7 +19,7 @@ export const Routs = () => {
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen
           name="Home"
-          component={List_Show}
+          component={Home_Screen}
           options={{headerShown: false}}
         />
         <Stack.Screen

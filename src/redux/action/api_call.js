@@ -17,11 +17,12 @@ export const api_call = data => async dispatch => {
   dispatch({type: 'start_loading'});
   try {
     await axios.request(options).then(res => {
-      console.log('successs');
       dispatch({type: 'success', payload: res});
+      console.log('successs');
     });
   } catch (error) {
+    dispatch({type: 'error_found', payload: error});
     console.log(error);
-    dispatch({type: 'error', payload: error});
   }
+  dispatch({type: 'stop_loading'});
 };

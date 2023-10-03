@@ -47,7 +47,6 @@ export const Item_Details = props => {
               flexDirection: 'row',
               alignItems: 'center',
               marginVertical: 10,
-              borderWidth: 1,
             }}>
             <Icon
               name={'like1'}
